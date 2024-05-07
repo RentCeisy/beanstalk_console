@@ -13,9 +13,9 @@ $GLOBALS['config'] = array(
      * Optional Basic Authentication
      */
     'auth' => array(
-        'enabled' => false,
-        'username' => 'admin',
-        'password' => 'password',
+        'enabled' => isset($_ENV['AUTH_ENABLED']) ? $_SERVER['AUTH_ENABLED'] : false,
+        'username' => isset($_ENV['AUTH_USERNAME']) ? $_SERVER['AUTH_USERNAME'] : 'admin',
+        'password' => isset($_ENV['AUTH_PASSWORD']) ? $_SERVER['AUTH_PASSWORD'] : 'password',
     ),
     /**
      * Version number
